@@ -1,0 +1,23 @@
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# environments
+.venv/
+venv/
+env/
+
+# large / generated data
+data/raw/
+data/processed/
+runs/
+
+# model weights (keep small final ones tracked deliberately in models/)
+*.pt
+!models/*.pt
+
+# misc
+*.mp4
+!docs/demo.mp4
+.env
