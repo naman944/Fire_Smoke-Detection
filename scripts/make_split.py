@@ -3,13 +3,17 @@ data/processed/{train,val,test}/{images,labels} using symlinks (no copying, no
 extra disk usage). test/ is symlinked wholesale from the untouched raw test set.
 
 Stratified by content: background (no boxes), smoke-only, fire-only, both.
+Optionally subsamples the train pool (post-val-split) down to --train-cap
+images, keeping the bucket proportions, to keep training time manageable on
+constrained hardware.
 
 Usage:
-    python scripts/make_split.py [--val-frac 0.1] [--seed 0]
+    python scripts/make_split.py [--val-frac 0.1] [--seed 0] [--train-cap 8000]
 """
 import argparse
-import random
+import shutil
 from pathlib import Path
+from typing import Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw" / "D-Fire"
@@ -35,7 +39,9 @@ def symlink_force(src: Path, dst: Path):
     dst.symlink_to(src)
 
 
-def main(val_frac: float, seed: int):
+def main(val_frac: float, seed: int, train_cap: Optional[int]):
+    import random
+
     train_img_dir = RAW / "train" / "images"
     train_lbl_dir = RAW / "train" / "labels_clean"
     test_img_dir = RAW / "test" / "images"
@@ -47,16 +53,28 @@ def main(val_frac: float, seed: int):
         buckets[categorize(lp)].append(lp)
 
     rng = random.Random(seed)
-    train_set, val_set = [], []
+    train_pools = {}
+    val_counts = {}
+    val_set = []
     for name, files in buckets.items():
         rng.shuffle(files)
         n_val = max(1, int(len(files) * val_frac))
+        val_counts[name] = n_val
         val_set.extend(files[:n_val])
-        train_set.extend(files[n_val:])
-        print(f"  {name}: total={len(files)} -> train={len(files) - n_val} val={n_val}")
+        train_pools[name] = files[n_val:]
+
+    total_train_full = sum(len(v) for v in train_pools.values())
+    train_set = []
+    for name, files in train_pools.items():
+        if train_cap and train_cap < total_train_full:
+            n_keep = min(len(files), max(1, round(train_cap * len(files) / total_train_full)))
+            kept = rng.sample(files, n_keep)
+        else:
+            kept = files
+        train_set.extend(kept)
+        print(f"  {name}: pool={len(files)} -> train_kept={len(kept)}  val={val_counts[name]}")
 
     if OUT.exists():
-        import shutil
         shutil.rmtree(OUT)
 
     for split_name, files in [("train", train_set), ("val", val_set)]:
@@ -89,5 +107,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--val-frac", type=float, default=0.1)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--train-cap", type=int, default=None,
+                     help="Subsample the post-val train pool down to this many images (bucket-proportional)")
     args = ap.parse_args()
-    main(args.val_frac, args.seed)
+    main(args.val_frac, args.seed, args.train_cap)
