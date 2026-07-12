@@ -1,4 +1,4 @@
-path: /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small
+path: ../data/processed/D-Fire-small
 
 train: train/images
 test: test/images

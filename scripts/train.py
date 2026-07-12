@@ -1,5 +1,6 @@
 from pathlib import Path
 from ultralytics import YOLO
+import torch
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -9,14 +10,20 @@ OUTPUT_DIR = ROOT / "runs" / "fire_detection"
 
 MODEL_NAME = "yolo11n.pt"
 
-EPOCHS= 20
+EPOCHS= 30
 IMAGE_SIZE = 640
 BATCH_SIZE = 8
 WORKERS = 2
 
-DEVICE = "mps"
 RANDOM_SEED = 42
 EXPERIMENT_NAME = "yolo11n_Finetune"
+
+
+def get_device():
+    if torch.cuda.is_available(): return "cuda"
+    if torch.backends.mps.is_available(): return 'mps'
+    return 'cpu'
+
 
 def validate_path():
     if not YAML_DIR.exists():
@@ -33,6 +40,8 @@ def load_model():
 
 def train(model:YOLO):
     print("\n Starting training ...")
+    DEVICE = get_device()
+
     result = model.train(
         data= str(YAML_DIR),
         epochs=EPOCHS,
