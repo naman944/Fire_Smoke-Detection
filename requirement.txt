@@ -1,0 +1,7 @@
+ultralytics==8.4.89
+torch==2.12.0
+torchvision==0.27.0
+opencv-python==5.0.0.93
+gradio==6.20.0
+onnx==1.22.0
+onnxruntime==1.27.0
