@@ -1,0 +1,11 @@
+path: /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small
+
+train: train/images
+test: test/images
+val: val/images
+
+names:
+  0: smoke
+  1: fire
+
+

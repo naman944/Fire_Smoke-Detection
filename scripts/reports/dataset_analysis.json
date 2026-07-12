@@ -1,0 +1,44 @@
+{
+  "dataset": "D-Fire Dataset",
+  "class_mapping": {
+    "0": "smoke",
+    "1": "fire"
+  },
+  "train": {
+    "total_images": 17221,
+    "categories": {
+      "fire_only": 944,
+      "smoke_only": 4681,
+      "fire_and_smoke": 3763,
+      "negative_or_background": 7833
+    },
+    "audit": {
+      "missing_label_files": 0,
+      "unknown_class_images": 0,
+      "unknown_class_ids": {}
+    }
+  },
+  "test": {
+    "total_images": 4306,
+    "categories": {
+      "fire_only": 220,
+      "smoke_only": 1186,
+      "fire_and_smoke": 895,
+      "negative_or_background": 2005
+    },
+    "audit": {
+      "missing_label_files": 0,
+      "unknown_class_images": 0,
+      "unknown_class_ids": {}
+    }
+  },
+  "combined": {
+    "total_images": 21527,
+    "categories": {
+      "fire_only": 1164,
+      "smoke_only": 5867,
+      "fire_and_smoke": 4658,
+      "negative_or_background": 9838
+    }
+  }
+}

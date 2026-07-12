@@ -1,0 +1,171 @@
+{
+  "dataset": "D-Fire-small",
+  "subset_root": "/Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small",
+  "overall_passed": true,
+  "splits": {
+    "train": {
+      "passed": true,
+      "expected_images": 2100,
+      "actual_images": 2100,
+      "actual_labels": 2100,
+      "categories": {
+        "fire_and_smoke": 550,
+        "fire_only": 500,
+        "smoke_only": 550,
+        "negative_or_background": 500
+      },
+      "expected_categories": {
+        "fire_and_smoke": 550,
+        "fire_only": 500,
+        "smoke_only": 550,
+        "negative_or_background": 500
+      },
+      "bounding_boxes": {
+        "smoke": 1260,
+        "fire": 2421,
+        "total": 3681
+      },
+      "audit": {
+        "missing_labels": [],
+        "missing_images": [],
+        "invalid_label_files": [],
+        "category_mismatches": [],
+        "missing_manifest_images": [],
+        "unexpected_actual_images": [],
+        "duplicate_manifest_files": [],
+        "empty_label_files": 500,
+        "clamped_label_files": []
+      }
+    },
+    "val": {
+      "passed": true,
+      "expected_images": 450,
+      "actual_images": 450,
+      "actual_labels": 450,
+      "categories": {
+        "fire_and_smoke": 125,
+        "fire_only": 100,
+        "smoke_only": 125,
+        "negative_or_background": 100
+      },
+      "expected_categories": {
+        "fire_and_smoke": 125,
+        "fire_only": 100,
+        "smoke_only": 125,
+        "negative_or_background": 100
+      },
+      "bounding_boxes": {
+        "smoke": 281,
+        "fire": 512,
+        "total": 793
+      },
+      "audit": {
+        "missing_labels": [],
+        "missing_images": [],
+        "invalid_label_files": [],
+        "category_mismatches": [],
+        "missing_manifest_images": [],
+        "unexpected_actual_images": [],
+        "duplicate_manifest_files": [],
+        "empty_label_files": 100,
+        "clamped_label_files": []
+      }
+    },
+    "test": {
+      "passed": true,
+      "expected_images": 450,
+      "actual_images": 450,
+      "actual_labels": 450,
+      "categories": {
+        "fire_and_smoke": 125,
+        "fire_only": 100,
+        "smoke_only": 125,
+        "negative_or_background": 100
+      },
+      "expected_categories": {
+        "fire_and_smoke": 125,
+        "fire_only": 100,
+        "smoke_only": 125,
+        "negative_or_background": 100
+      },
+      "bounding_boxes": {
+        "smoke": 278,
+        "fire": 504,
+        "total": 782
+      },
+      "audit": {
+        "missing_labels": [],
+        "missing_images": [],
+        "invalid_label_files": [],
+        "category_mismatches": [],
+        "missing_manifest_images": [],
+        "unexpected_actual_images": [],
+        "duplicate_manifest_files": [],
+        "empty_label_files": 100,
+        "clamped_label_files": [
+          {
+            "image": "AoF07890.jpg",
+            "label": "AoF07890.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07891.jpg",
+            "label": "AoF07891.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07910.jpg",
+            "label": "AoF07910.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07941.jpg",
+            "label": "AoF07941.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07943.jpg",
+            "label": "AoF07943.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10513.jpg",
+            "label": "WEB10513.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10767.jpg",
+            "label": "WEB10767.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10801.jpg",
+            "label": "WEB10801.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10820.jpg",
+            "label": "WEB10820.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10910.jpg",
+            "label": "WEB10910.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11602.jpg",
+            "label": "WEB11602.txt",
+            "clamped_boxes": 1
+          }
+        ]
+      }
+    }
+  },
+  "cross_split_overlap": {
+    "passed": true,
+    "train_val": [],
+    "train_test": [],
+    "val_test": []
+  }
+}

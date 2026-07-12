@@ -1,9 +1,0 @@
-ultralytics>=8.3.0
-torch
-torchvision
-opencv-python-headless
-matplotlib
-pandas
-pyyaml
-gradio
-streamlit
