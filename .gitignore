@@ -8,7 +8,8 @@ venv/
 
 data/
 
-runs/
+runs
+
 outputs/
 
 yolo11n.pt
