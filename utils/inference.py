@@ -10,7 +10,7 @@ DEFAULT_COLOR = (0, 255, 0)
 
 def load_model(model_path):
     print(f"\nLoading YOLO model from {model_path}...")
-    return YOLO(model_path)
+    return YOLO(model_path , task="detect")  
 
 def extract_detections(result):
     """Convert YOLO boxes into the dict format expected by TemporalSmoothing."""
