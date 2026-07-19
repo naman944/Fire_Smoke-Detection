@@ -12,7 +12,8 @@ import argparse
 import time
 import cv2
 
-DEFAULT_MODEL = ROOT / "runs" / "fire_detection" / "yolo11n_baseline" / "weights" / "best.pt"
+# DEFAULT_MODEL = ROOT / "runs" / "fire_detection" / "yolo11n_baseline" / "weights" / "best.pt"
+DEFAULT_MODEL = Path("best.pt")
 OUTPUT_DIR = ROOT / "outputs"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

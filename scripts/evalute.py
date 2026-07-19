@@ -6,7 +6,8 @@ import torch
 
 ROOT= Path(__file__).resolve().parent.parent
 LAST_MODEL_DIR = ROOT / "runs" / "fire_detection" / "yolo11n_baseline" / "weights" / "last.pt"
-BEST_MODEL_DIR = ROOT / "runs" / "fire_detection" / "yolo11n_baseline" / "weights" / "best.pt"
+# BEST_MODEL_DIR = ROOT / "runs" / "fire_detection" / "yolo11n_baseline" / "weights" / "best.pt"
+BEST_MODEL_DIR = Path("best.pt")
 YAML_DIR = ROOT / "configs" / "dfire_small.yaml"
 REPORTS_DIR = ROOT / "scripts" / "reports"
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)

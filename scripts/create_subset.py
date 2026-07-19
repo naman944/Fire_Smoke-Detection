@@ -15,24 +15,24 @@ RANDOM_SEED = 42
 
 SPLIT_TARGETS = {
     "train": {
-        "fire_only": 500,
-        "smoke_only": 550,
-        "fire_and_smoke": 550,
-        "negative_or_background": 500
+        "fire_only": 844,
+        "smoke_only": 4500,
+        "fire_and_smoke": 3600,
+        "negative_or_background": 7733
     },
 
     "val": {
         "fire_only": 100,
-        "smoke_only": 125,
-        "fire_and_smoke": 125,
+        "smoke_only": 181,
+        "fire_and_smoke": 163,
         "negative_or_background": 100
     },
 
     "test": {
-        "fire_only": 100,
-        "smoke_only": 125,
-        "fire_and_smoke": 125,
-        "negative_or_background": 100
+        "fire_only": 220,
+        "smoke_only": 1186,
+        "fire_and_smoke": 895,
+        "negative_or_background": 2005
     }
 }
 

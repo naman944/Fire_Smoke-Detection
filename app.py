@@ -8,7 +8,8 @@ from utils.inference import load_model, predict_image, predict_frame
 from utils.Temporal_smoothing import TemporalSmoothing
 
 ROOT = Path(__file__).resolve().parent
-MODEL_PT = ROOT / "weights" / "best.pt"
+# MODEL_PT = ROOT / "weights" / "best.pt"
+MODEL_PT = Path("best.pt")
 MODEL_ONNX = MODEL_PT.with_suffix(".onnx")
 
 # Prefer the ONNX export when available, otherwise fall back to the .pt weights.

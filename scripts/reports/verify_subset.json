@@ -1,29 +1,29 @@
 {
   "dataset": "D-Fire-small",
   "subset_root": "/Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small",
-  "overall_passed": true,
+  "overall_passed": false,
   "splits": {
     "train": {
       "passed": true,
-      "expected_images": 2100,
-      "actual_images": 2100,
-      "actual_labels": 2100,
+      "expected_images": 16677,
+      "actual_images": 16677,
+      "actual_labels": 16677,
       "categories": {
-        "fire_and_smoke": 550,
-        "fire_only": 500,
-        "smoke_only": 550,
-        "negative_or_background": 500
+        "fire_and_smoke": 3600,
+        "fire_only": 844,
+        "smoke_only": 4500,
+        "negative_or_background": 7733
       },
       "expected_categories": {
-        "fire_and_smoke": 550,
-        "fire_only": 500,
-        "smoke_only": 550,
-        "negative_or_background": 500
+        "fire_and_smoke": 3600,
+        "fire_only": 844,
+        "smoke_only": 4500,
+        "negative_or_background": 7733
       },
       "bounding_boxes": {
-        "smoke": 1260,
-        "fire": 2421,
-        "total": 3681
+        "smoke": 9152,
+        "fire": 11157,
+        "total": 20309
       },
       "audit": {
         "missing_labels": [],
@@ -33,31 +33,31 @@
         "missing_manifest_images": [],
         "unexpected_actual_images": [],
         "duplicate_manifest_files": [],
-        "empty_label_files": 500,
+        "empty_label_files": 7733,
         "clamped_label_files": []
       }
     },
     "val": {
       "passed": true,
-      "expected_images": 450,
-      "actual_images": 450,
-      "actual_labels": 450,
+      "expected_images": 544,
+      "actual_images": 544,
+      "actual_labels": 544,
       "categories": {
-        "fire_and_smoke": 125,
+        "fire_and_smoke": 163,
         "fire_only": 100,
-        "smoke_only": 125,
+        "smoke_only": 181,
         "negative_or_background": 100
       },
       "expected_categories": {
-        "fire_and_smoke": 125,
+        "fire_and_smoke": 163,
         "fire_only": 100,
-        "smoke_only": 125,
+        "smoke_only": 181,
         "negative_or_background": 100
       },
       "bounding_boxes": {
-        "smoke": 281,
-        "fire": 512,
-        "total": 793
+        "smoke": 391,
+        "fire": 650,
+        "total": 1041
       },
       "audit": {
         "missing_labels": [],
@@ -72,37 +72,140 @@
       }
     },
     "test": {
-      "passed": true,
-      "expected_images": 450,
-      "actual_images": 450,
-      "actual_labels": 450,
+      "passed": false,
+      "expected_images": 4306,
+      "actual_images": 4306,
+      "actual_labels": 4306,
       "categories": {
-        "fire_and_smoke": 125,
-        "fire_only": 100,
-        "smoke_only": 125,
-        "negative_or_background": 100
+        "fire_and_smoke": 890,
+        "fire_only": 225,
+        "smoke_only": 1183,
+        "negative_or_background": 2008
       },
       "expected_categories": {
-        "fire_and_smoke": 125,
-        "fire_only": 100,
-        "smoke_only": 125,
-        "negative_or_background": 100
+        "fire_and_smoke": 895,
+        "fire_only": 220,
+        "smoke_only": 1186,
+        "negative_or_background": 2005
       },
       "bounding_boxes": {
-        "smoke": 278,
-        "fire": 504,
-        "total": 782
+        "smoke": 2303,
+        "fire": 2878,
+        "total": 5185
       },
       "audit": {
         "missing_labels": [],
         "missing_images": [],
-        "invalid_label_files": [],
-        "category_mismatches": [],
+        "invalid_label_files": [
+          {
+            "image": "WEB10769.jpg",
+            "label": "WEB10769.txt",
+            "errors": [
+              "Invalid bounding box values in line 2 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB10769.txt: 0 0.50546875 0.3625 1.0296875 0.7083333333333334"
+            ]
+          },
+          {
+            "image": "WEB10770.jpg",
+            "label": "WEB10770.txt",
+            "errors": [
+              "Invalid bounding box values in line 2 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB10770.txt: 0 0.50703125 0.3625 1.0078125 0.7138888888888889"
+            ]
+          },
+          {
+            "image": "WEB10775.jpg",
+            "label": "WEB10775.txt",
+            "errors": [
+              "Invalid bounding box values in line 3 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB10775.txt: 0 0.496875 0.27083333333333337 1.015625 0.5750000000000001"
+            ]
+          },
+          {
+            "image": "WEB10821.jpg",
+            "label": "WEB10821.txt",
+            "errors": [
+              "Invalid bounding box values in line 3 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB10821.txt: 0 0.49843750000000003 0.3388888888888889 1.0093750000000001 0.6166666666666667"
+            ]
+          },
+          {
+            "image": "WEB11090.jpg",
+            "label": "WEB11090.txt",
+            "errors": [
+              "Invalid bounding box values in line 1 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB11090.txt: 0 0.5437500000000001 0.5013888888888889 0.5375 1.0027777777777778"
+            ]
+          },
+          {
+            "image": "WEB11598.jpg",
+            "label": "WEB11598.txt",
+            "errors": [
+              "Invalid bounding box values in line 1 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB11598.txt: 0 0.49921875000000004 0.4013888888888889 1.0359375 0.8138888888888889"
+            ]
+          },
+          {
+            "image": "WEB11600.jpg",
+            "label": "WEB11600.txt",
+            "errors": [
+              "Invalid bounding box values in line 1 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB11600.txt: 0 0.496875 0.4222222222222222 1.0562500000000001 0.8388888888888889"
+            ]
+          },
+          {
+            "image": "WEB11606.jpg",
+            "label": "WEB11606.txt",
+            "errors": [
+              "Invalid bounding box values in line 1 in /Users/namankumar/Desktop/project/Fire AI/data/processed/D-Fire-small/test/labels/WEB11606.txt: 0 0.2578125 0.4986111111111111 0.50625 1.0027777777777778"
+            ]
+          }
+        ],
+        "category_mismatches": [
+          {
+            "image": "WEB10769.jpg",
+            "expected": "fire_and_smoke",
+            "actual": "fire_only"
+          },
+          {
+            "image": "WEB10770.jpg",
+            "expected": "fire_and_smoke",
+            "actual": "fire_only"
+          },
+          {
+            "image": "WEB10775.jpg",
+            "expected": "fire_and_smoke",
+            "actual": "fire_only"
+          },
+          {
+            "image": "WEB10821.jpg",
+            "expected": "fire_and_smoke",
+            "actual": "fire_only"
+          },
+          {
+            "image": "WEB11090.jpg",
+            "expected": "smoke_only",
+            "actual": "negative_or_background"
+          },
+          {
+            "image": "WEB11598.jpg",
+            "expected": "smoke_only",
+            "actual": "negative_or_background"
+          },
+          {
+            "image": "WEB11600.jpg",
+            "expected": "smoke_only",
+            "actual": "negative_or_background"
+          },
+          {
+            "image": "WEB11606.jpg",
+            "expected": "fire_and_smoke",
+            "actual": "fire_only"
+          }
+        ],
         "missing_manifest_images": [],
         "unexpected_actual_images": [],
         "duplicate_manifest_files": [],
-        "empty_label_files": 100,
+        "empty_label_files": 2005,
         "clamped_label_files": [
+          {
+            "image": "AoF07867.jpg",
+            "label": "AoF07867.txt",
+            "clamped_boxes": 1
+          },
           {
             "image": "AoF07890.jpg",
             "label": "AoF07890.txt",
@@ -114,8 +217,23 @@
             "clamped_boxes": 1
           },
           {
+            "image": "AoF07894.jpg",
+            "label": "AoF07894.txt",
+            "clamped_boxes": 1
+          },
+          {
             "image": "AoF07910.jpg",
             "label": "AoF07910.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07920.jpg",
+            "label": "AoF07920.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07922.jpg",
+            "label": "AoF07922.txt",
             "clamped_boxes": 1
           },
           {
@@ -124,8 +242,43 @@
             "clamped_boxes": 1
           },
           {
+            "image": "AoF07942.jpg",
+            "label": "AoF07942.txt",
+            "clamped_boxes": 1
+          },
+          {
             "image": "AoF07943.jpg",
             "label": "AoF07943.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07946.jpg",
+            "label": "AoF07946.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "AoF07949.jpg",
+            "label": "AoF07949.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "PublicDataset01162.jpg",
+            "label": "PublicDataset01162.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "PublicDataset01321.jpg",
+            "label": "PublicDataset01321.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "PublicDataset01323.jpg",
+            "label": "PublicDataset01323.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10509.jpg",
+            "label": "WEB10509.txt",
             "clamped_boxes": 1
           },
           {
@@ -134,13 +287,108 @@
             "clamped_boxes": 1
           },
           {
+            "image": "WEB10590.jpg",
+            "label": "WEB10590.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10739.jpg",
+            "label": "WEB10739.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10743.jpg",
+            "label": "WEB10743.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10755.jpg",
+            "label": "WEB10755.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10765.jpg",
+            "label": "WEB10765.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10766.jpg",
+            "label": "WEB10766.txt",
+            "clamped_boxes": 1
+          },
+          {
             "image": "WEB10767.jpg",
             "label": "WEB10767.txt",
             "clamped_boxes": 1
           },
           {
+            "image": "WEB10772.jpg",
+            "label": "WEB10772.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10773.jpg",
+            "label": "WEB10773.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10777.jpg",
+            "label": "WEB10777.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10778.jpg",
+            "label": "WEB10778.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10779.jpg",
+            "label": "WEB10779.txt",
+            "clamped_boxes": 2
+          },
+          {
+            "image": "WEB10781.jpg",
+            "label": "WEB10781.txt",
+            "clamped_boxes": 2
+          },
+          {
+            "image": "WEB10782.jpg",
+            "label": "WEB10782.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10793.jpg",
+            "label": "WEB10793.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10798.jpg",
+            "label": "WEB10798.txt",
+            "clamped_boxes": 1
+          },
+          {
             "image": "WEB10801.jpg",
             "label": "WEB10801.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10803.jpg",
+            "label": "WEB10803.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10807.jpg",
+            "label": "WEB10807.txt",
+            "clamped_boxes": 3
+          },
+          {
+            "image": "WEB10809.jpg",
+            "label": "WEB10809.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB10819.jpg",
+            "label": "WEB10819.txt",
             "clamped_boxes": 1
           },
           {
@@ -154,8 +402,53 @@
             "clamped_boxes": 1
           },
           {
+            "image": "WEB11002.jpg",
+            "label": "WEB11002.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11126.jpg",
+            "label": "WEB11126.txt",
+            "clamped_boxes": 1
+          },
+          {
             "image": "WEB11602.jpg",
             "label": "WEB11602.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11603.jpg",
+            "label": "WEB11603.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11607.jpg",
+            "label": "WEB11607.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11614.jpg",
+            "label": "WEB11614.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11620.jpg",
+            "label": "WEB11620.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11621.jpg",
+            "label": "WEB11621.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11624.jpg",
+            "label": "WEB11624.txt",
+            "clamped_boxes": 1
+          },
+          {
+            "image": "WEB11804.jpg",
+            "label": "WEB11804.txt",
             "clamped_boxes": 1
           }
         ]
